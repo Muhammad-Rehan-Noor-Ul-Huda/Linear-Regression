@@ -1,5 +1,32 @@
-Linear Regression from ScratchThis project demonstrates Simple Linear Regression implemented manually in Python. Instead of using high-level machine learning libraries (like Scikit-Learn's LinearRegression), these scripts explicitly define the Cost Function and Gradient Descent algorithms to optimize weights ($w$) and biases ($b$).📂 File OverviewThe project consists of two main scripts, each applying the algorithm to a different dataset:1. electricity_lin_reg.pyGoal: Predict electricity prices based on units consumed.Dataset Required: electricity_bill_data.csvHyperparameters:Learning Rate ($\alpha$): $0.000001$ (Very small to prevent divergence due to large feature values).Iterations: 3000.Visualization: Plots the cost curve and the regression line against the dataset.2. linear_regression.pyGoal: Predict student test scores based on study hours.Dataset Required: student_scores.csvHyperparameters:Learning Rate ($\alpha$): $0.01$Iterations: 1500.Feature: Includes a specific prediction output for a student studying 7 hours.🛠️ DependenciesTo run these scripts, you will need the following Python libraries:Bashpip install numpy pandas matplotlib
-🧠 How It Works (The Math)The scripts implement the following mathematical concepts to find the "best fit" line:1. Prediction ModelThe model predicts the target variable $y$ using the linear equation:$$f_{w,b}(x) = wx + b$$$w$: Weight (Slope)$b$: Bias (Y-intercept)2. Cost Function (Mean Squared Error)To measure how well the line fits the data, the code calculates the cost ($J$) using the Mean Squared Error formula:$$J(w,b) = \frac{1}{2m} \sum_{i=0}^{m-1} (f_{w,b}(x^{(i)}) - y^{(i)})^2$$3. Gradient DescentTo minimize the cost, the parameters are updated iteratively by moving against the gradient:$$w = w - \alpha \frac{\partial J}{\partial w}$$$$b = b - \alpha \frac{\partial J}{\partial b}$$Where the derivatives are:$$\frac{\partial J}{\partial w} = \frac{1}{m} \sum_{i=0}^{m-1} (f_{w,b}(x^{(i)}) - y^{(i)})x^{(i)}$$$$\frac{\partial J}{\partial b} = \frac{1}{m} \sum_{i=0}^{m-1} (f_{w,b}(x^{(i)}) - y^{(i)})$$🚀 How to RunPrepare the Data: Ensure you have the CSV files in the same directory as the scripts.electricity_bill_data.csv: Column 0 = Units, Column 1 = Price.student_scores.csv: Column 0 = Hours, Column 1 = Scores.Execute the Script:Bashpython electricity_lin_reg.py
-# OR
-python linear_regression.py
-View Results:The terminal will print the Cost, Weight, and Bias every 100 iterations.A Matplotlib window will open showing the scatter plot of the data and the red regression line.
+# Linear Regression from Scratch
+
+This project demonstrates **Simple Linear Regression** implemented manually in Python. Instead of using high-level machine learning libraries (like Scikit-Learn's `LinearRegression`), these scripts explicitly define the Cost Function and Gradient Descent algorithms to optimize weights ($w$) and biases ($b$).
+
+## 📂 File Overview
+
+The project consists of two main scripts, each applying the algorithm to a different dataset:
+
+### 1. `electricity_lin_reg.py`
+* **Goal:** Predict electricity prices based on units consumed.
+* **Dataset Required:** `electricity_bill_data.csv`
+* **Hyperparameters:**
+    * Learning Rate ($\alpha$): `0.000001` (Set very small to prevent divergence due to large feature values).
+    * Iterations: `3000`
+* **Visualization:** Plots the cost curve and the regression line against the dataset.
+
+### 2. `linear_regression.py`
+* **Goal:** Predict student test scores based on study hours.
+* **Dataset Required:** `student_scores.csv`
+* **Hyperparameters:**
+    * Learning Rate ($\alpha$): `0.01`
+    * Iterations: `1500`
+* **Feature:** Includes a specific prediction output for a student studying **7 hours**.
+
+---
+
+## 🛠️ Dependencies
+
+To run these scripts, you will need the following Python libraries:
+
+```bash
+pip install numpy pandas matplotlib
