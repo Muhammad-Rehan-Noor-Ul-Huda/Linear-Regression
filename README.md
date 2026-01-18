@@ -1,7 +1,6 @@
 # Linear Regression from Scratch
 
 This project demonstrates **Simple Linear Regression** implemented manually in Python. Instead of using high-level machine learning libraries (like Scikit-Learn's `LinearRegression`), these scripts explicitly define the Cost Function and Gradient Descent algorithms to optimize weights ($w$) and biases ($b$).
-
 ## 📂 File Overview
 
 The project consists of two main scripts, each applying the algorithm to a different dataset:
